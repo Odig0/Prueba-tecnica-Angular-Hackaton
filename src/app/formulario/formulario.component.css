@@ -1,0 +1,92 @@
+header {
+  background-image: url('../img/Acme.png');
+  background-size: cover;
+  background-position: 1px 1px; /* coloca la imagen en la esquina superior izquierda */
+  background-repeat: no-repeat;
+  
+}
+
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+.form-group {
+    margin-top: 25px;
+    width: 50%;
+    display: inline-block;
+  }
+
+.fcc-btn {
+    background-color: #1f53c5;
+    color: white;
+  }
+  .container {
+    display:flexbox;
+    width: 60%;
+  }
+  
+  /* .controls {
+    margin-top: 25px;
+    width: 40%;
+    display: inline-block;
+    background: #24303c;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+    border: 1px solid #1f53c5;
+    font-family: 'calibri';
+    font-size: 18px;
+    color: white;
+    
+  } */
+  .controls {
+    display: inline-block;
+    margin-top: 5px;
+    width: 45%;
+    background: #24303c;
+    padding: 5px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #1f53c5;
+    font-family: 'calibri';
+    font-size: 18px;
+    color: white;
+  }
+  .form-register p {
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 40px;
+  }
+  
+  .form-register a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .form-register a:hover {
+    color: white;
+    text-decoration: underline;
+  }  
+label{
+    text-align: left;
+}
+.subtitulo {
+    text-align: center;
+  }
+button{
+    text-align: right;
+}
+.btn-primary{
+    background-color: yellow;
+}
+.btn-email{
+    text-align: center;
+    background-color: #1f53c5;
+}
+.btn-whatsapp{
+    text-align:center ;
+    background-color: white;
+}

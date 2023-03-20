@@ -1,0 +1,29 @@
+
+<div>
+    <input  class ="controls" type="text" id="username" [(ngModel)]="username" placeholder="Nombre de Usuario en Github"/>
+    <button class= "form-botons" (click)="getRepositories()">Buscar Repositorios</button>
+  </div>
+  
+  <table>
+    <thead>
+      <tr>
+        <th class = "table">Seleccionar
+        </th>
+        <th class = "table">Name</th>
+        <th class = "table">Descripcion</th>
+        <th class = "table">Estrellas</th>      
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let repo of repositories">
+        <div>
+          <input type = "checkbox" name ="repo">
+        </div>
+        <td>{{ repo.name }}</td>
+        <td>{{ repo.public_repos }}</td>
+        <td>{{ repo.private }}</td>
+      </tr>
+    </tbody>
+
+  </table>
+  

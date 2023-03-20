@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <section class="form-container">
+        <h2 class="subtitulo">Formulario de inscripción</h2>
+        <div class="container">
+            <form [formGroup]="myform" (submit)="onSubmit()">
+                <div class="controls">
+                    <input class="controls" type="text" name="firstname" id="nombres" placeholder="Ingrese su Nombre" [(ngModel)]="name">
+                </div>
+                <pre></pre>
+                <div class="controls">
+                    <input class="controls" type="text" name="lastname" id="apellidos" placeholder="Ingrese su Apellido" [(ngModel)]="lastname">
+                </div>
+                <div class="controls">
+                    <input class="controls" type="number" id="number" name="numero" pattern="[0-9]*" required placeholder="Ingrese su Carnet de Identidad" [(ngModel)]="ci">
+                </div>
+                <pre></pre>
+                <div class="controls">
+                    <div>
+                        <form class="controls">
+                            <label for="Extension">Extension CI</label>
+                            <select id="Extension" name="Extension">
+                                <option value="">--Seleccione un valor</option>
+                                <option value="SC">SC</option>
+                                <option value="LP">LP</option>
+                                <option value="CBB">Or</option>
+                            </select>
+                            <br>
+                        </form>
+                    </div>
+                </div>
+                <div class="controls">
+                    <input class="controls" type="date" id="fecha" name="numero" pattern="[0-9]*" required placeholder="Fecha de nacimiento" [(ngModel)]="address">
+                </div>
+                <div class="controls">
+                    <input class="controls" type="number" id="num" name="numero" pattern="[0-9]*" required placeholder="Número de Teléfono" [(ngModel)]="address">
+                </div>
+                <div class="controls">
+                    <input class="controls" type="text" id="Direccion" name="numero" pattern="[0-9]*" required placeholder="Dirección" [(ngModel)]="address">
+                    <button type="button" class="btn btn-primary">Buscar dirección</button>
+                </div>
+            </form>
+            <pre></pre>
+            <div class="form-btn">
+                <button class="btn-email" type="submit">
+                    <a target="_blank" class="fcc-btn" href="mailto:diegoguzman366@gmail.com">Enviar por email</a> 
+                </button>
+                <button [attr.href]="mensaje" class="btn-email" type="submit" id="send" (click)="enviarWhatsapp()">
+                    <a target="_blank" class="fcc-btn"  >Enviar por WhatsApp</a> 
+                </button>   
+            </div>
+        </div>
+    </section>
+
+    
+    
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvWqfh_HrJA2c8yyjNdcu57lzDzrHie1g"></script>
+
+</body>
+</html>
