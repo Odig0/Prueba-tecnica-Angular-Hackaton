@@ -10,7 +10,7 @@ import { FormularioComponent } from './formulario/formulario.component';
 import { ApiGitHubComponent } from './api-git-hub/api-git-hub.component';
 import { GitHubComponent } from './git-hub/git-hub.component';
 import { TablaRepositoriosComponent } from './tabla-repositorios/tabla-repositorios.component';
-import { MapaComponent } from './mapa/mapa.component';
+
 // import { WhatsAppService } from './whatsapp-services/whats-app.service';
 
 
@@ -21,7 +21,6 @@ import { MapaComponent } from './mapa/mapa.component';
     ApiGitHubComponent,
     GitHubComponent,
     TablaRepositoriosComponent,
-    MapaComponent   
   ],
   imports: [
     BrowserModule,

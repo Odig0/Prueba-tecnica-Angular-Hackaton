@@ -8,7 +8,7 @@ import {Observable} from 'rxjs'
 })
 export class GithubService {
   username = '';
-  private token = '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';
+  private token = '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';
   private apiUrl = 'https://api.github.com';
 
   constructor(private http: HttpClient) { }

@@ -14,7 +14,7 @@
             <form>
             <!-- [formGroup]="myform" (submit)="onSubmit()"> -->
                 <div class="controls">
-                    <input class="controls" type="text" id="username" [(ngModel)]="username" name="username" placeholder="Nombre de Usuario" #usernameref ="ngModel">
+                    <input class="controls" type="text" id="user" [(ngModel)]="user" name="user" placeholder="Nombre de Usuario" #usereref ="ngModel">
                 </div>
                 <pre></pre>
                 <div class="controls">
@@ -39,8 +39,11 @@
                     </div>
                 </div>
                 <div class="controls">
-                    <input class="controls" type="date" id="fecha" name="numero" pattern="[0-9]*" required placeholder="Fecha de nacimiento" [(ngModel)]="date">
-                </div>
+                    <input class="controls" type="date" id="fecha" name="numero" pattern="[0-9]*" required placeholder="Fecha de nacimiento" [(ngModel)]="date" (blur)="validarEdad()">
+                    <p>Fecha de nacimiento</p>
+                    <p class="error" *ngIf="!edadValida">Debe ser menor a 30 años</p>
+                  </div>
+                  
                 <div class="controls">
                     <input class="controls" type="number" id="num" name="numero" pattern="[0-9]*" required placeholder="Número de Teléfono" [(ngModel)]="number">
                 </div>
@@ -54,13 +57,47 @@
                 <button class="btn-email" type="submit">
                     <a target="_blank" class="fcc-btn" href="mailto:diegoguzman366@gmail.com">Enviar por email</a> 
                 </button>
-                <button [attr.href]="mensaje" class="btn-email" type="submit" id="send" (click)=" enviarWhatsapp()">
+                <button [attr.href]="mensaje" class="btn-email" type="submit" id="send" (click)=" sentMessage()">
                     <a target="_blank" class="fcc-btn"  >Enviar por WhatsApp</a> 
                 </button>   
             </div>
         </div>
     </section>
 
+    
+<div>
+    <input class="controls" type="text" id="username" [(ngModel)]="username" name="username" placeholder="Nombre de Usuario en Github" #usernameref ="ngModel">
+      <button class= "form-botons" (click)="getRepositories()">Buscar Repositorios</button>
+    </div>
+    
+    <table>
+      <thead>
+        <tr>
+          <th class = "table">Seleccionar/Borrar
+          </th>
+          <th class = "table">Name</th>
+          <th class = "table">Descripcion</th>
+          <th class = "table">Estrellas</th>      
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let repo of repositories">
+          <div>
+            <input type="checkbox" [(ngModel)]="repo .select" name="repo" 
+            [checked]="repo.name" 
+            (change)="saveSelected(repo.name,$event)"  value="{{repo.name}}">
+            <!-- <input type="checkbox" [(ngModel)]="repo .select" name="rep"  (change)="deleteSelected(repo.name)"  value="{{repo.name}}"> -->
+        </div>
+          <td>{{ repo.name }}</td>
+          <td>{{ repo.description }}</td>
+          <td>{{ repo.stars }}</td>
+        </tr>
+        <tr *ngFor="let repo of selectedRepositories">
+          <td><a href="{{ repo.html_url }}" target="_blank">{{ repo.html_url }}</a></td>
+        </tr>
+      </tbody>
+  
+    </table>
     
     
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvWqfh_HrJA2c8yyjNdcu57lzDzrHie1g"></script>

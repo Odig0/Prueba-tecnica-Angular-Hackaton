@@ -27,20 +27,7 @@ header {
     width: 60%;
   }
   
-  /* .controls {
-    margin-top: 25px;
-    width: 40%;
-    display: inline-block;
-    background: #24303c;
-    padding: 10px;
-    border-radius: 4px;
-    margin-bottom: 6px;
-    border: 1px solid #1f53c5;
-    font-family: 'calibri';
-    font-size: 18px;
-    color: white;
-    
-  } */
+  
   .controls {
     display: inline-block;
     margin-top: 5px;
@@ -89,4 +76,26 @@ button{
 .btn-whatsapp{
     text-align:center ;
     background-color: white;
+}
+
+
+.form-botons {
+  background: #1f53c5;
+  border: none;
+  padding: 12px;
+  color: white;
+  margin: 16px 0;
+  font-size: 16px;
+}
+
+.table{
+  border: 1px solid black;
+  border-collapse: collapse;
+  justify-content: center;
+  align-items: center;
+  
+}
+table{
+  width: 60%;
+  align-items: center;
 }
