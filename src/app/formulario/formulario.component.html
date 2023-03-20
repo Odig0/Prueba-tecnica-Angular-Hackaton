@@ -11,9 +11,10 @@
     <section class="form-container">
         <h2 class="subtitulo">Formulario de inscripción</h2>
         <div class="container">
-            <form [formGroup]="myform" (submit)="onSubmit()">
+            <form>
+            <!-- [formGroup]="myform" (submit)="onSubmit()"> -->
                 <div class="controls">
-                    <input class="controls" type="text" name="firstname" id="nombres" placeholder="Ingrese su Nombre" [(ngModel)]="name">
+                    <input class="controls" type="text" id="username" [(ngModel)]="username" name="username" placeholder="Nombre de Usuario" #usernameref ="ngModel">
                 </div>
                 <pre></pre>
                 <div class="controls">
@@ -38,10 +39,10 @@
                     </div>
                 </div>
                 <div class="controls">
-                    <input class="controls" type="date" id="fecha" name="numero" pattern="[0-9]*" required placeholder="Fecha de nacimiento" [(ngModel)]="address">
+                    <input class="controls" type="date" id="fecha" name="numero" pattern="[0-9]*" required placeholder="Fecha de nacimiento" [(ngModel)]="date">
                 </div>
                 <div class="controls">
-                    <input class="controls" type="number" id="num" name="numero" pattern="[0-9]*" required placeholder="Número de Teléfono" [(ngModel)]="address">
+                    <input class="controls" type="number" id="num" name="numero" pattern="[0-9]*" required placeholder="Número de Teléfono" [(ngModel)]="number">
                 </div>
                 <div class="controls">
                     <input class="controls" type="text" id="Direccion" name="numero" pattern="[0-9]*" required placeholder="Dirección" [(ngModel)]="address">
@@ -53,7 +54,7 @@
                 <button class="btn-email" type="submit">
                     <a target="_blank" class="fcc-btn" href="mailto:diegoguzman366@gmail.com">Enviar por email</a> 
                 </button>
-                <button [attr.href]="mensaje" class="btn-email" type="submit" id="send" (click)="enviarWhatsapp()">
+                <button [attr.href]="mensaje" class="btn-email" type="submit" id="send" (click)=" enviarWhatsapp()">
                     <a target="_blank" class="fcc-btn"  >Enviar por WhatsApp</a> 
                 </button>   
             </div>

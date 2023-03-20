@@ -1,6 +1,6 @@
 
 <div>
-    <input  class ="controls" type="text" id="username" [(ngModel)]="username" placeholder="Nombre de Usuario en Github"/>
+  <input class="controls" type="text" id="username" [(ngModel)]="username" name="username" placeholder="Nombre de Usuario en Github" #usernameref ="ngModel">
     <button class= "form-botons" (click)="getRepositories()">Buscar Repositorios</button>
   </div>
   
@@ -17,7 +17,8 @@
     <tbody>
       <tr *ngFor="let repo of repositories">
         <div>
-          <input type = "checkbox" name ="repo">
+          <input type = "checkbox" name ="repo" (change) = "guardarseleccionados(repo.name)"
+          value = "{{repo.name}}">
         </div>
         <td>{{ repo.name }}</td>
         <td>{{ repo.public_repos }}</td>

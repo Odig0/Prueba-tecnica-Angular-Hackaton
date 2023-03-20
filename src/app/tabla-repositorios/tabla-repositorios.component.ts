@@ -22,6 +22,13 @@ export class TablaRepositoriosComponent  {
   ngOnInit(): void {
     this.getRepositories();
   }
+  guardarseleccionados(nombreRepositorios: string){
+    console.log(nombreRepositorios)
+
+  }
 }
 
-
+// this.repositories = esa variable contiene los repositories
+// crear un segundo array y en base a nombre del repository copiar 
+//al segundo array el seleccionado utilizando el nombre funcion de los repositories ifind map
+//

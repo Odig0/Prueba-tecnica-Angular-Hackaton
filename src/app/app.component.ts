@@ -33,8 +33,8 @@ export class AppComponent {
   }
 
   hacerSolicitud() {
-      const url = 'https://api.github.com/users/CamiloClaure/repos';
-      const token = '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'; // Reemplaza esto con tu token generado
+      const url = 'https://api.github.com/users/Odig0/repos';
+      
   
       const headers = {
         'Authorization': `Bearer ${token}`
@@ -48,6 +48,8 @@ export class AppComponent {
 // }
 
 
+
+const token = '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'; 
   // getUsers(){
   //   this.githubService.getData().subscribe((data) =>{
   //     console.log(data);

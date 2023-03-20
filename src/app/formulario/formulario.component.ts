@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
+import { GithubService } from '../services/github.service';
 
 // import { WhatsAppService } from '../whatsapp-services/whats-app.service';
 
@@ -17,18 +18,36 @@ export class FormularioComponent {
     number: number = 0;
     address: string = "";
     mensaje = '';
+    date: string = '';
+    username = 'sds';
+    repositories: any[] = [];
     myform = new FormGroup({
-    name: new FormControl('', Validators.required)
+    username: new FormControl('')
+
     });
+
+    
   
     onSubmit() {
       console.log(this.myform.value);
     }
+    
     enviarWhatsapp() {
       const telefono = '59163525425'; // Reemplazar con el número de teléfono
       const mensaje = encodeURIComponent
-      (`Hola ${this.name} tu inscripcion con carnet ${this.ci} fue exitosa`); // Reemplazar con el mensaje introducido en el formulario
+      (`Hola ${this.username} tu inscripcion con carnet ${this.ci} fue exitosa`); // Reemplazar con el mensaje introducido en el formulario
       window.open(`https://wa.me/${telefono}?text=${mensaje}`, '_blank');
+      console.log(this.username)
     }
-  }
+    guardar() {
+      console.log(this.name); // Muestra el valor del campo input
+      // Aquí puedes hacer cualquier cosa con el valor del campo input
+    }
+    constructor(private githubService: GithubService) {}
 
+
+}
+
+
+    
+//funcion de validacion 
